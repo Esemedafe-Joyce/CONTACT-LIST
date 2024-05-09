@@ -1,0 +1,14 @@
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+
+<contacts>
+    <contact>
+        <name>Jane Doe</name>
+        <address>No 10 whickam street</address>
+        <phone>
+            <mobile>+23489765387</mobile>
+            <work>+23489765387</work>
+            <home>+23489765387</home>
+        </phone>
+        <email>janedoe@example.com</email>
+    </contact>
+</contacts>

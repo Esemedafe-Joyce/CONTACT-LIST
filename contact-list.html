@@ -1,0 +1,59 @@
+<html>
+    <body>
+        <script>
+            const xmlString = `
+            <contacts>
+                <contact>
+                    <name>Jane Doe </name>
+                    <address>No 10 whickam street</address>
+                    <phone>
+                        <mobile>+23489765387</mobile>
+                        <work>+23489765387</work>
+                        <home>+23489765387</home>
+                    </phone>
+                    <email>janedoe@example.com</email>
+                </contact>
+            </contacts>`;
+            const xmlDoc = new DOMParser().parseFromString(xmlString, "text/xml");
+
+            const jobElement = xmlDoc.createElement('job');
+            const engineerText = xmlDoc.createTextNode('Engineer');
+            jobElement.appendChild(engineerText);
+            const contactElement = xmlDoc.getElementsByTagName('contact')[0];
+            contactElement.appendChild(jobElement);
+
+            console.log(contactElement);
+
+            const moreContactElement = xmlDoc.createElement('contact');
+            const nameElement = xmlDoc.createElement('name');
+            const nameText = xmlDoc.createTextNode('John Doe');
+            nameElement.appendChild(nameText);
+            const addressElement = xmlDoc.createElement('address');
+            const addressText = xmlDoc.createTextNode('Elizabeth street');
+            addressElement.appendChild(addressText);
+            const phoneElement = xmlDoc.createElement('phone');
+            const mobileElement = xmlDoc.createElement('mobile');
+            const mobileText = xmlDoc.createTextNode('+23456790786');
+            mobileElement.appendChild(mobileText);
+            const workElement = xmlDoc.createElement('work');
+            const workText = xmlDoc.createTextNode('+23456790786');
+            workElement.appendChild(workText);
+            const homeElement = xmlDoc.createElement('home');
+            const homeText = xmlDoc.createTextNode('+23456790786');
+            homeElement.appendChild(homeText);
+            const emailElement = xmlDoc.createElement('email');
+            const emailText = xmlDoc.createTextNode('johndoe@example.com');
+            emailElement.appendChild(emailText);
+            const moreJobElement = xmlDoc.createElement('job');
+            const moreJobText = xmlDoc.createTextNode('Nurse');
+            moreJobElement.appendChild(moreJobText);
+            
+            
+            phoneElement.append(mobileElement, workElement, homeElement);
+
+            moreContactElement.append(nameElement,addressElement,phoneElement, emailElement, moreJobElement);
+
+            console.log(moreContactElement);
+        </script>
+    </body>
+</html>
